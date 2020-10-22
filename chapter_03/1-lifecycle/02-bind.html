@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Vue直接引入Script资源</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+<div id="app">
+  <!-- 绑定一个属性 -->
+  <img v-bind:src="imageSrc"/>
+  <!-- 缩写 -->
+  <img :src="imageSrc"/>
+  <!-- 最终会生成 `<img src="${imageSrc}">` 这样的模板 -->
+
+  <!-- 动态特性名 (2.6.0+) -->
+  <button v-bind:[key]="value"></button>
+  <!-- 动态特性名缩写 (2.6.0+) -->
+  <button :[key]="value"></button>
+  <!-- 最终会生成 `<button ${key}="${value}">` 这样的模板 -->
+
+  <!-- 内联字符串拼接 -->
+  <img :src="'/path/to/images/' + fileName"/>
+
+  <!-- class 绑定 -->
+  <div :class="{ red: isRed }"></div>
+  <div :class="[classA, classB]"></div>
+  <div :class="[classA, { classB: isB, classC: isC }]">
+    <!-- style 绑定 -->
+    <div :style="{ fontSize: size + 'px' }"></div>
+    <div :style="[styleObjectA, styleObjectB]"></div>
+
+    <!-- 绑定一个有属性的对象 -->
+    <div v-bind="{ id: someProp, 'other-attr': otherProp }"></div>
+  </div>
+</div>
+<script>
+new Vue({
+  el: '#app',
+});
+Vue.component('my-text', {
+  props: ["text"],
+  template: "<p>{{text}}</p>"
+})
+</script>
+</body>
+</html>

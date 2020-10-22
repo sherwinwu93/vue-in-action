@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Vue直接引入Script资源</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+<div id="app">
+  <!--直接在模板中写js-->
+  {{ price * 100 + 2000 }} {{ message.split('').reverse().join('') }} {{ type ===
+  'group' ? '团队' : '个人' }}
+
+  <div v-bind:class="isActived ? 'actived' : ''"></div>
+
+  <div v-bind:index="'item-' + index"></div>
+
+  <!-- 以下是语句，不是表达式 -->
+  {{ var message = "123" }} {{ if(type === 'group') { return '团队' } }}
+</div>
+<script>
+new Vue({
+  el: '#app'
+});
+</script>
+</body>
+</html>
