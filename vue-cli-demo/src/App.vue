@@ -9,9 +9,9 @@
 </template>
 
 <script>
-// import HelloWorld from './components/HelloWorld.vue'
-// import MyButtonTest from "./components/prop/MyBottonTest.vue"
-// import MyButton2Test from "./components/event/MyButton2Test";
+// import HelloWorld from './page/HelloWorld.vue'
+// import MyButtonTest from "./page/prop/MyBottonTest.vue"
+// import MyButton2Test from "./page/event/MyButton2Test";
 
 import MyButton3Test from "./components/slot/MyButton3Test";
 export default {
