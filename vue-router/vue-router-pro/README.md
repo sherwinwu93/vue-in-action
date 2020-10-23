@@ -1,4 +1,4 @@
-# vue-cli-demo
+# vue-router-pro
 
 ## Project setup
 ```
