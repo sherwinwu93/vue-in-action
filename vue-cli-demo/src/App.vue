@@ -1,17 +1,26 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <!--<img alt="Vue logo" src="./assets/logo.png">-->
+    <!--<HelloWorld msg="Welcome to Your Vue.js App"/>-->
+    <!--<MyButtonTest></MyButtonTest>-->
+    <!--<my-button2-test></my-button2-test>-->
+    <my-button3-test></my-button3-test>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+// import HelloWorld from './components/HelloWorld.vue'
+// import MyButtonTest from "./components/prop/MyBottonTest.vue"
+// import MyButton2Test from "./components/event/MyButton2Test";
 
+import MyButton3Test from "./components/slot/MyButton3Test";
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    MyButton3Test
+    // HelloWorld
+    // MyButtonTest
+    // MyButton2Test,
   }
 }
 </script>
