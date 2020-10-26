@@ -1,102 +1,3 @@
-<!--<template>-->
-  <!--<div>-->
-    <!--<section class="todoapp">-->
-      <!--<header class="header">-->
-        <!--<h1>todos</h1>-->
-        <!--<input class="new-todo" v-model="newTodo" @keyup.enter="addTodo()" placeholder="你接下来要做什么?">-->
-      <!--</header>-->
-      <!--<section class="main" v-show="todos.length">-->
-        <!--<ul class="todo-list">-->
-          <!--<li class="todo" v-for="todo in todos" :key="todo.id"-->
-              <!--:class="{completed: todo.completed, editing: todo.id === editedTodo.id}">-->
-            <!--<div class="view">-->
-              <!--<input class="toggle" type="checkbox" v-model="todo.completed">-->
-              <!--&lt;!&ndash;双击进入编辑栏&ndash;&gt;-->
-              <!--<label @dblclick="editTodo(todo)">{{todo.title}}</label>-->
-              <!--&lt;!&ndash;清除&ndash;&gt;-->
-              <!--<button class="destroy" @click="removeTodo(todo)"></button>-->
-            <!--</div>-->
-            <!--&lt;!&ndash;完成备忘&ndash;&gt;-->
-            <!--<input class="edit"-->
-                   <!--type="text"-->
-                   <!--v-model="editedTodo.title"-->
-                   <!--@blur="doneEdit(editedTodo)"-->
-                   <!--@keyup.enter="doneEdit(editedTodo)"-->
-                   <!--@keyup.esc="cancelEdit()"-->
-            <!--&gt;-->
-          <!--</li>-->
-        <!--</ul>-->
-        <!--<footer class="footer" v-show="todos.length">-->
-        <!--<span class="todo-count">-->
-          <!--<strong>{{remaining}}</strong> {{remaining | pluralize}} left-->
-        <!--</span>-->
-          <!--<button class="clear-completed" v-show="todos.length > remaining" @click="removeCompleted()">-->
-            <!--Clear completed-->
-          <!--</button>-->
-        <!--</footer>-->
-      <!--</section>-->
-    <!--</section>-->
-  <!--</div>-->
-<!--</template>-->
-
-<!--<script>-->
-<!--let id = 1;-->
-<!--export default {-->
-  <!--name: "Todo",-->
-  <!--data () {-->
-    <!--return {-->
-      <!--todos: [],-->
-      <!--newTodo: "",-->
-      <!--editedTodo: {},-->
-    <!--}-->
-  <!--},-->
-  <!--computed: {-->
-    <!--remaining () {-->
-      <!--return this.todos.filter(x => !x.completed).length;-->
-    <!--}-->
-  <!--},-->
-  <!--filters: {-->
-    <!--pluralize (remaining) {-->
-      <!--return remaining > 1 ? "items" : "item";-->
-    <!--}-->
-  <!--},-->
-  <!--methods: {-->
-    <!--cancelEdit () {-->
-      <!--this.editedTodo = {};-->
-    <!--},-->
-    <!--doneEdit (todo) {-->
-      <!--this.todos = this.todos.map(x => {-->
-        <!--return x.id === todo.id ? {...todo} : {...x};-->
-      <!--});-->
-    <!--},-->
-    <!--removeTodo (todo) {-->
-      <!--const index = this.todos.findIndex(x => x.id === todo.id);-->
-      <!--this.todos.splice(index, 1)-->
-    <!--},-->
-    <!--addTodo () {-->
-      <!--if (!this.newTodo) {-->
-        <!--return;-->
-      <!--}-->
-      <!--this.todos.unshift({-->
-        <!--id: id++,-->
-        <!--title: this.newTodo,-->
-        <!--completed: false-->
-      <!--})-->
-      <!--this.newTodo = "";-->
-    <!--},-->
-    <!--editTodo (todo) {-->
-      <!--this.editedTodo = {...todo}-->
-    <!--},-->
-    <!--removeCompleted () {-->
-      <!--this.todos = this.todos.filter(x => !x.completed);-->
-    <!--}-->
-  <!--}-->
-<!--}-->
-<!--</script>-->
-
-<!--<style scoped>-->
-<!--@import "https://unpkg.com/todomvc-app-css@2.1.0/index.css";-->
-<!--</style>-->
 <template>
   <div>
     <section class="todoapp">
@@ -121,6 +22,7 @@
               <!--删除操作-->
               <button class="destroy" @click="removeTodo(todo)"></button>
             </div>
+            111
             <input class="edit" type="text" v-model="editedTodo.title"
                    @blur="doneEdit(editedTodo)"
                    @keyup.enter="doneEdit(editedTodo)"
@@ -193,13 +95,13 @@ export default {
     //完成备忘
     doneEdit(todo) {
       this.todos = this.todos.map(x => {
-        return todo.id == x.id ? {...todo} : {...x}
+        return todo.id === x.id ? {...todo} : {...x}
       });
       this.editedTodo = {};
     },
     cancelEdit() {
       this.editedTodo = {}
-    }
+    },
   }
 }
 </script>
