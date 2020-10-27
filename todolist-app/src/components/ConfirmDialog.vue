@@ -42,12 +42,14 @@ export default {
   methods: {
     cancel () {
       if (this.dialogInfo.reject) {
+        //回调报错
         this.dialogInfo.reject();
         this.$emit("done");
       }
     },
     confirm () {
       if (this.dialogInfo.resolve) {
+        //回调成功
         this.dialogInfo.resolve();
         this.$emit("done");
       }
