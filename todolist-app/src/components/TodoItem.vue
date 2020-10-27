@@ -8,6 +8,7 @@
     <!--编辑框-->
     <input class="edit" type="text"
            v-model="editingTitle"
+           v-autofocus
            v-if="isEdited"
            @blur="doneEdit()"
            @keyup.enter="doneEdit()"
@@ -25,6 +26,13 @@ export default {
     return {
       isEdited: false,
       editingTitle: ""
+    }
+  },
+  directives: {
+    autofocus: {
+      inserted: function (el) {
+        el.focus()
+      }
     }
   },
   //子接父的值

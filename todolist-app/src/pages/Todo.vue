@@ -2,7 +2,11 @@
   <div class="todoapp">
     <header class="header">
       <h1>todos</h1>
-      <input class="new-todo" placeholder="你接下来做什么?" v-model="newTodo" @keyup.enter="addTodo()">
+      <input class="new-todo"
+             placeholder="你接下来做什么?"
+             v-model="newTodo"
+             @keyup.enter="addTodo()"
+             v-autofocus>
     </header>
     <section class="main">
       <transition-group
@@ -66,6 +70,13 @@ let id = 0;
 export default {
   name: "Todo",
   components: {TodoItem},
+  directives: {
+    autofocus: {
+      inserted: function (el) {
+        el.focus();
+      }
+    }
+  },
   data () {
     return {
       id: parseInt(localStorage.getItem("id") || "0"),

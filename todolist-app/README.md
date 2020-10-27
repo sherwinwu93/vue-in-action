@@ -23,3 +23,13 @@ export default
 ### Tips
 1. 重构要仔细检查引入,否则找不到错误
 2. 认清出父子结构,在脑子里有个大致的图,否则极其容易样式污染
+
+### 自定义组件
+directives: {
+  autofocus: {
+    inserted: function (el) {
+      el.focus();
+    }
+  }
+}
+
