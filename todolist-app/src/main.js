@@ -1,7 +1,7 @@
 import Vue from 'vue'
-import App from './pages/Todo.vue'
 import VueRouter from 'vue-router'
-import Todo from "./App";
+import App from './App'
+import Todo from "./pages/Todo";
 
 Vue.config.productionTip = false
 Vue.use(VueRouter);
@@ -14,10 +14,11 @@ const routes = [
   }
 ];
 let router = new VueRouter({
-  routes
+  routes: routes
 });
 
-new Vue({
+export default new Vue({
   router,
   render: h => h(App),
-}).$mount('#app')
+}).$mount('#app');
+

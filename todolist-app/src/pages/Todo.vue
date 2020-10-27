@@ -59,12 +59,12 @@
 </template>
 
 <script>
-import TodoItem from "./TodoItem";
+import TodoItem from "../components/TodoItem";
 import Velocity from "velocity-animate";
 
 let id = 0;
 export default {
-  name: "App",
+  name: "Todo",
   components: {TodoItem},
   data () {
     return {
@@ -78,9 +78,6 @@ export default {
     todos (newVal) {
       //还可以使用sessionStorage
       localStorage.setItem("todos", JSON.stringify(newVal));
-      let lastIndex = this.todos.lastIndex;
-      const lastId =  lastIndex!= -1 ? this.todos[lastIndex].id : 0;
-      localStorage.setItem("id", lastId);
     }
   },
   computed: {
@@ -153,6 +150,9 @@ export default {
 }
 </script>
 
-<style scoped>
-@import "../../public/index.css";
+<style>
+@import "https://unpkg.com/todomvc-app-css@2.1.0/index.css";
+*, ::after, ::before {
+  box-sizing: inherit;
+}
 </style>

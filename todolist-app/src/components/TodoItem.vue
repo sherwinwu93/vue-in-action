@@ -70,7 +70,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
 .todo-list li .editing .view {
   display: none;
 }

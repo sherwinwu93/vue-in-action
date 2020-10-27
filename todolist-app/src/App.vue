@@ -26,7 +26,7 @@ export default {
   },
   mounted () {
     this.$nextTick(() => {
-      vm.$on("setDialog", dialogInfo => {
+      vm.$on("setDialog", (dialogInfo) => {
         this.items.push({dialogInfo, component: ConfirmDialog});
       });
     });
@@ -39,6 +39,6 @@ export default {
 }
 </script>
 
-<style scoped>
-
+<style>
 </style>
+
